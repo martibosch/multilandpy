@@ -707,9 +707,7 @@ class FocalAnalysis:
         if chunk_size is not None and len(sites_gdf) > chunk_size:
             return pd.concat(
                 [
-                    self._compute_features_for_chunk(
-                        sites_gdf.iloc[i : i + chunk_size]
-                    )
+                    self._compute_features_for_chunk(sites_gdf.iloc[i : i + chunk_size])
                     for i in range(0, len(sites_gdf), chunk_size)
                 ]
             )

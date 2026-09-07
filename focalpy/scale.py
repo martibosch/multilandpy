@@ -291,11 +291,13 @@ class ScaleOfEffectSelector(SelectorMixin, BaseEstimator):
     >>> from sklearn.pipeline import Pipeline
     >>> from sklearn.preprocessing import StandardScaler
     >>> from sklearn.linear_model import LinearRegression
-    >>> pipe = Pipeline([
-    ...     ("soe", ScaleOfEffectSelector(criteria="spearmanr", how="individual")),
-    ...     ("scaler", StandardScaler()),
-    ...     ("model", LinearRegression()),
-    ... ])
+    >>> pipe = Pipeline(
+    ...     [
+    ...         ("soe", ScaleOfEffectSelector(criteria="spearmanr", how="individual")),
+    ...         ("scaler", StandardScaler()),
+    ...         ("model", LinearRegression()),
+    ...     ]
+    ... )
     >>> pipe.fit(X_df, y)  # doctest: +SKIP
 
     See Also
